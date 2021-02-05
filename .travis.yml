@@ -19,3 +19,4 @@ deploy:
   token:
     secure: $FIREBASE_TOKEN
 
+    
