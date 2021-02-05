@@ -11,7 +11,7 @@ jobs:
   - stage: Install modules
     script: npm install;
   - stage: Build app
-    script: ng serve -o;
+    script: ng build;
     after_success:
       - npm install -g firebase-tools
       - firebase deploy --token "$FIREBASE_TOKEN"
