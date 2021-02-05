@@ -8,10 +8,9 @@ cache:
   - "$HOME/google-cloud-sdk/"
 jobs:
   include:
-  - stage: Install modules
-    script: npm install;
   - stage: Build app
     script: ng build;
-    after_success:
-      - npm install -g firebase-tools
-      - firebase deploy --token "$FIREBASE_TOKEN"
+deploy:
+  provider: firebase
+  token:
+    secure: $FIREBASE_TOKEN
